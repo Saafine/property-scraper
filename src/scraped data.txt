@@ -1,0 +1,55 @@
+url
+
+            <header class="col-md-offer-content">
+                <h1 itemprop="name">58 m2, 4 pok. obecnie wynajmowane Zobacz !</h1>
+                <address class="p-t-5">
+                                            <p class="address-links"><a href="https://www.otodom.pl/sprzedaz/mieszkanie/" class="title">Mieszkanie na sprzedaż</a>, <a href="https://www.otodom.pl/sprzedaz/mieszkanie/mazowieckie/">mazowieckie</a>, <a href="https://www.otodom.pl/sprzedaz/mieszkanie/warszawa/">Warszawa</a>, <a href="https://www.otodom.pl/sprzedaz/mieszkanie/warszawa/wola/">Wola</a>, Krochmalna<span> - <a href="#" class="address-link-map" data-toggle="modal" data-target=".map-modal-lg" data-tracking="show_map" data-tracking-data="{&quot;touch_point_button&quot;:&quot;top&quot;}" data-ninja-extradata="{&quot;touch_point_button&quot;:&quot;top&quot;}">Zobacz na mapie</a></span></p>
+                        <p class="address-text" itemprop="address">Warszawa, Wola</p>
+                                    </address>
+            </header>
+			
+
+<ul class="main-list">
+                            <li class="param_price">Cena <span><strong>629 000 zł</strong></span> 10 845 zł/m²</li>
+<li class="param_m">Powierzchnia <span><strong>58 m²</strong></span></li>
+    <li>Liczba pokoi <span><strong>4</strong></span></li>
+    <li class="param_floor_no">Piętro <span><strong>9</strong> (z 15)</span></li>
+                        </ul>
+
+ <div class="area-lane">
+                <span class="light-text">powierzchnia</span>
+                <br>
+                <span class="big">58 m²</span>
+            </div>
+                     
+					 
+					 <div class="room-lane">
+                <span class="light-text">pokoje</span>
+                <br>
+                <span class="big
+				
+				
+    <li class="param_floor_no">Piętro <span><strong>9</strong> (z 15)</span></li>
+	
+	
+	    <ul class="sub-list">
+                                                                                                            <li><strong>Rynek:</strong> wtórny</li>
+                                                                                                                                                <li><strong>Rodzaj zabudowy:</strong> blok</li>
+                                                                                                                                                <li><strong>Materiał budynku:</strong> beton</li>
+                                                                                                                                                <li><strong>Okna:</strong> plastikowe</li>
+                                                                                                                                                <li><strong>Ogrzewanie:</strong> miejskie</li>
+                                                                                                                                                <li><strong>Rok budowy:</strong> 1976 </li>
+                                                                                                                                                <li><strong>Stan wykończenia:</strong> do zamieszkania</li>
+                                                                                                                                                <li><strong>Czynsz:</strong> 600 zł</li>
+                                                                                                                                                <li><strong>Forma własności:</strong> spółdzielcze własnościowe</li>
+                                                                                                </ul>
+																								
+																								                <div class="address-lane">
+            <address>
+                                    <span class="inline-middle pin"><a href="#" class="hidden-xs" data-toggle="modal" data-target=".map-modal-lg" data-tracking="show_map_top"><i class="icon-point light-text"></i></a></span>
+                    <div class="inline-middle">
+                        <p class="address-links"><a href="https://www.otodom.pl/sprzedaz/mieszkanie/" class="title">Mieszkanie na sprzedaż</a>, <a href="https://www.otodom.pl/sprzedaz/mieszkanie/mazowieckie/">mazowieckie</a>, <a href="https://www.otodom.pl/sprzedaz/mieszkanie/warszawa/">Warszawa</a>, <a href="https://www.otodom.pl/sprzedaz/mieszkanie/warszawa/wola/">Wola</a>, Krochmalna</p>    
+                        <p class="address-text">Warszawa, Wola</p>
+                    </div>
+                            </address>
+        </div>
