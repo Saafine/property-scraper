@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc -p . && node lib/index"
+    "start": "tsc -p . && node --inspect lib/index"
   },
   "author": "",
   "license": "ISC",

@@ -1,1 +1,9 @@
-{"price":"629 000 zł"}
+{
+  "price": "629 000 zł",
+  "area": "58 m²",
+  "rooms": "4",
+  "floorNo": "9",
+  "year": "1976",
+  "marketType": "wtórny",
+  "rent": "600 zł"
+}
