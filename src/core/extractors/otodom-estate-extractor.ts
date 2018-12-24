@@ -1,12 +1,10 @@
 import { IEstate } from '../../definitions';
-import { IEstateExtractor } from './definitions';
 import { JSDOM } from 'jsdom';
-import { similiarStrings } from '../../helpers/string-helpers';
-import { _Node, _NodeFilter } from '../../constants/node';
+import { IEstateExtractor } from './definitions';
+import { removeChildrenFromNode, searchNodesForText } from '../../helpers/nodes.helper';
 
 const MAIN_LIST_CLASS = '.main-list';
 const SUB_LIST_CLASS = '.sub-list';
-
 
 interface IOtodomSubElement {
   text: string;
@@ -17,7 +15,7 @@ interface IOtodomEstateSublist {
   [key: string]: IOtodomSubElement;
 }
 
-export class OtodomEstateExtractor {
+export class OtodomEstateExtractor implements IEstateExtractor {
   public extractEstate(bodyHTML: string): IEstate {
     const dom: JSDOM = new JSDOM(bodyHTML); // todo shouldnt puppetter handle this?
     const doc = dom.window.document;
@@ -34,21 +32,21 @@ export class OtodomEstateExtractor {
   }
 
   // todo why these are public
-  getPrice(doc: Document): string {
+  private getPrice(doc: Document): string {
     return doc.querySelector(`${ MAIN_LIST_CLASS } .param_price strong`).innerHTML;
   }
 
-  getArea(doc: Document): string {
+  private getArea(doc: Document): string {
     return doc.querySelector(`${ MAIN_LIST_CLASS } .param_m strong`).innerHTML;
   }
 
-  getRooms(doc: Document): string {
+  private getRooms(doc: Document): string {
     const list = doc.querySelector(`${ MAIN_LIST_CLASS }`);
-    const findElement = this.searchNodesForText('liczba pokoi', list, doc);
+    const findElement = searchNodesForText('liczba pokoi', list, doc);
     return findElement && findElement.closest('li').querySelector('strong').innerHTML;
   }
 
-  getFloorNo(doc: Document): string {
+  private getFloorNo(doc: Document): string {
     return doc.querySelector(`${ MAIN_LIST_CLASS } .param_floor_no strong`).innerHTML;
   }
 
@@ -66,31 +64,10 @@ export class OtodomEstateExtractor {
     };
     for (let key in subList) {
       const list = doc.querySelector(`${ SUB_LIST_CLASS }`);
-      const findElement = this.searchNodesForText(subList[key].text, list, doc);
+      const findElement = searchNodesForText(subList[key].text, list, doc);
       const parentElement = findElement && findElement.closest('li');
-      subList[key].value = this.removeChildrenFromNode(parentElement).textContent.trim();
+      subList[key].value = parentElement ? removeChildrenFromNode(parentElement).textContent.trim() : '';
     }
     return subList;
   };
-
-  // abstract
-  private removeChildrenFromNode(node: Node): Node {
-    const nodeCopy = node.cloneNode(true);
-    const nodeChildren = Array.from(nodeCopy.childNodes);
-    for (let childNode of nodeChildren) {
-      childNode.nodeType !== _Node.TEXT_NODE && nodeCopy.removeChild(childNode);
-    }
-    return nodeCopy;
-  }
-
-  private searchNodesForText(searchText: string, nodes: Element, doc: Document): Element {
-    let node: Node;
-    const walk = doc.createTreeWalker(nodes, _NodeFilter.SHOW_TEXT, null);
-    while (node = walk.nextNode()) {
-      const { textContent } = node;
-      if (similiarStrings(textContent, searchText)) {
-        return node.parentElement;
-      }
-    }
-  }
 }
